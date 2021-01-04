@@ -34,6 +34,7 @@ public class UsuariosFunc {
     public void requisicaoPostUser(){
         Response response =
             given()
+                .contentType("application/json; charset=utf-8")
                 .body(VariaveisEstaticas.getRequestBody())
             .when()
                 .post(url)
@@ -48,6 +49,7 @@ public class UsuariosFunc {
     public void requisicaoPutUser(){
         Response response =
             given()
+                .contentType("application/json; charset=utf-8")
                 .body(VariaveisEstaticas.getRequestBody())
             .when()
                 .put(url + "3")
@@ -61,7 +63,9 @@ public class UsuariosFunc {
 
     public void requisicaoDeleteUser(){
         Response response =
-            when()
+            given()
+                .contentType("application/json; charset=utf-8")
+            .when()
                 .delete(url + "2")
             .then()
                 .log().all()

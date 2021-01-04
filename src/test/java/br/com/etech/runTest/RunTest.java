@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(monochrome = true, snippets = SnippetType.CAMELCASE, plugin = {"pretty","io.qameta.allure.cucumberjvm.AllureCucumberJvm"},
         features = {"./src/test/resources/"},
         glue = {"br.com.etech.api.steps"},
-        tags = "@deleteUser")
+        tags = "@loginSuccessful")
 
 
 public class RunTest {
