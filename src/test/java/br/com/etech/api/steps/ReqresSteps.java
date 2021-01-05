@@ -104,4 +104,11 @@ public class ReqresSteps {
     public void realizarUmaRequisiçãoPOSTNoServiçoParaOLogin() {
         reqresFuncionalidade.requisicaoLogin();
     }
+
+
+    @Quando("^realizar uma requisição POST no serviço para do login$")
+    public void realizarUmaRequisiçãoPOSTNoServiçoParaDoLogin() {
+        reqresFuncionalidade.requisicaoSemLogin();
+    }
 }
+

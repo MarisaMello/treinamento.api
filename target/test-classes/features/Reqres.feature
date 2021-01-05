@@ -74,3 +74,10 @@
       Dado recuperar as informações de um email "tobias.funke@reqres.in" e senha "pistol" válido
       Quando realizar uma requisição POST no serviço para o login
       Então validar a mensagem na tela "QpwL5tke4Pnpja7X9"
+
+    @loginUnsuccessful
+    Cenário: validar login sem sucesso
+      Dado recuperar as informações de um email "peter @ klaven" e senha "" válido
+      Quando realizar uma requisição POST no serviço para do login
+      Então validar a mensagem de erro  "Missing password"
+      

@@ -125,5 +125,20 @@ public class ReqresFuncionalidade {
                         .extract().response();
         VariaveisEstaticas.setBody(response.getBody().path("token").toString());
     }
+
+
+    public void requisicaoSemLogin() {
+        Response response =
+                given()
+                        .contentType("application/json; charset=utf-8")
+                        .body(VariaveisEstaticas.getRequestBody())
+                        .when()
+                        .post("https://reqres.in/api/login")
+                        .then()
+                        .log().all()
+                        .statusCode(400)
+                        .extract().response();
+        VariaveisEstaticas.setBody(response.getBody().path("error").toString());
+    }
 }
 
