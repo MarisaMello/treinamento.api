@@ -133,4 +133,24 @@ public class DadosMeteorologicosFunc {
 
         VariaveisEstaticas.setBody(response.getBody().path("list").toString());
     }
+
+    public void getParamsId(String id) {
+        params.put("id", id);
+
+        VariaveisEstaticas.setParams(params);
+    }
+
+    public void requisicaoId() {
+        Response response =
+                given()
+                        .pathParams(VariaveisEstaticas.getParams())
+                        .when()
+                        .get("https://api.openweathermap.org/data/2.5/group?id={id}&appid={appid}")
+                        .then()
+                        .log().all()
+                        .statusCode(200)
+                        .extract().response();
+
+        VariaveisEstaticas.setBody(response.getBody().path("list").toString());
+    }
 }

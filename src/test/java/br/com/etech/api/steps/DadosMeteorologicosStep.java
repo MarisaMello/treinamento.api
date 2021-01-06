@@ -87,4 +87,15 @@ public class DadosMeteorologicosStep {
     public void realizarUmaRequisiçãoGETNoServiçoParaACidadeDeCirculo() {
         dadosMeteorologicosFunc.requisicaoCircle();
     }
+
+    @Dado("^recuperar os parametros ids \"([^\"]*)\"$")
+    public void recuperarOsParametrosIds(String id)  {
+        dadosMeteorologicosFunc.getParamsId(id);
+
+    }
+
+    @Quando("^realizar uma requisição GET no serviço para os ids$")
+    public void realizarUmaRequisiçãoGETNoServiçoParaOsIds() {
+        dadosMeteorologicosFunc.requisicaoId();
+    }
 }

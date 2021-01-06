@@ -38,3 +38,10 @@ Funcionalidade: Validar a chamada dos dados meteorologicos atuais para um local
     E informo o appid
     Quando realizar uma requisição GET no serviço para a cidade de circulo
     Então devo validar a "list"
+
+  @callForSeveralCityIDs
+  Cenário: validar a chamada dos dados meterologicos para vários Ids
+    Dado recuperar os parametros ids "3245,1806589,2792333"
+    E informo o appid
+    Quando realizar uma requisição GET no serviço para os ids
+    Então devo validar a "list"
